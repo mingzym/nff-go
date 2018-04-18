@@ -2,7 +2,10 @@
 # Use of this source code is governed by a BSD-style
 # license that can be found in the LICENSE file.
 
-PATH_TO_MK = ../../mk
-SUBDIRS = main pattern
+PATH_TO_MK = ../../../mk
+IMAGENAME = dpi
+EXECUTABLES = dpi
 
-include $(PATH_TO_MK)/intermediate.mk
+COMMON_FILES = handlers.go
+
+include $(PATH_TO_MK)/leaf.mk

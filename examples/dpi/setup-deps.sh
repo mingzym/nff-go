@@ -1,5 +1,7 @@
 #! /bin/sh -x
 
+# This is helper file for Travis CI build in Ubuntu xenial
+
 sudo apt-get install ragel libboost-all-dev
 
 cd ~
