@@ -43,14 +43,15 @@ sudo sed -i -e 's,biosdevname=0 net.ifnames=0 ,,' /etc/default/grub
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
 echo Installing system packages
-sudo dnf update
-sudo dnf install -y redhat-lsb-core net-tools numactl-devel libpcap-devel elfutils-libelf-devel
+sudo dnf -y upgrade
+sudo dnf -y install redhat-lsb-core net-tools numactl-devel libpcap-devel elfutils-libelf-devel
 SHELL
 
 $provision_ubuntu = <<SHELL
 echo Installing system packages
 sudo apt-get update
-sudo apt-get install -y python make gcc git libnuma-dev libpcap0.8-dev libelf-dev network-manager
+sudo apt-get -y upgrade
+sudo apt-get -y install python make gcc git libnuma-dev libpcap0.8-dev libelf-dev network-manager
 sudo systemctl enable network-manager
 sudo systemctl start network-manager
 SHELL

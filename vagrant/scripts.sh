@@ -134,7 +134,8 @@ setupdocker ()
         curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
         sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
         sudo apt-get update
-        sudo apt-get install -y docker-ce
+        sudo apt-get -y upgrade
+        sudo apt-get -y install docker-ce
         sudo gpasswd -a ubuntu docker
         sudo sed -i -e 's,ExecStart=/usr/bin/dockerd -H fd://,ExecStart=/usr/bin/dockerd,' /lib/systemd/system/docker.service
     elif [ $DISTRO == Fedora ]; then
